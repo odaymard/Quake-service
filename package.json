@@ -1,0 +1,28 @@
+{
+  "name": "quakes-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "readline-promise": "^1.0.5",
+    "superagent": "^6.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.18.0",
+    "mocha": "^8.2.1",
+    "nock": "^13.0.6",
+    "sinon": "^9.2.4",
+    "sinon-chai": "^3.5.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha tests/**/*.js"
+  },
+  "author": "Oday mardini",
+  "license": "ISC",
+  "description": "find the closest earthquakes for a given point",
+  "keywords": [
+    "nodejs"
+  ]
+}

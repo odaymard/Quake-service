@@ -1,36 +1,26 @@
-const chai = require("chai");
+const chai = require('chai');
 
-const expect = chai.expect;
+const { expect } = chai;
 
 const { getQuakesTitleAndDistinctCoord } = require('../../lib/helper').helper;
-const { mockedEarthQuakesFeaturesJson, mockedEarthQuakesFeaturesJsonWithDuplicate } = require('./helperFixtures');
+const {
+  mockedEarthQuakesFeaturesJson,
+  mockedEarthQuakesFeaturesJsonWithDuplicate,
+} = require('./helperFixtures');
 
-describe('helper', function(){
-  
-  describe('getQuakesTitleAndDistinctCoord', function () {
-    
-    it('returns an array', function () {
-      
+describe('helper', () => {
+  describe('getQuakesTitleAndDistinctCoord', () => {
+    it('returns an array', () => {
       const result = getQuakesTitleAndDistinctCoord(mockedEarthQuakesFeaturesJson);
       expect(result).to.be.an('array');
-      
     });
-    it('should return array with 2 elements', function () {
-      
+    it('should return array with 2 elements', () => {
       const result = getQuakesTitleAndDistinctCoord(mockedEarthQuakesFeaturesJson);
       expect(result.length).equal(2);
-      
     });
-    it('should return array with distinct coord', function () {
-      
+    it('should return array with distinct coord', () => {
       const result = getQuakesTitleAndDistinctCoord(mockedEarthQuakesFeaturesJsonWithDuplicate);
       expect(result.length).equal(2);
-      
     });
-    
-    
   });
-  
 });
-  
-  

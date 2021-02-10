@@ -1,13 +1,14 @@
 const { readFromStd } = require('./lib/inputListner');
 
-const { getQuakesTitleAndDistinctCoord, getTopCloseQuakes, printTopNearbyQuakes } = require('./lib/helper').helper;
+const {
+  getQuakesTitleAndDistinctCoord,
+  getTopCloseQuakes,
+  printTopNearbyQuakes,
+} = require('./lib/helper').helper;
 const { getQuakesJSON } = require('./services/earthQuake');
-
-
 
 (async () => {
   try {
-
     const topClose = 10;
     const UserPoint = await readFromStd();
 
@@ -16,27 +17,14 @@ const { getQuakesJSON } = require('./services/earthQuake');
     const quakeJsonFeatures = quakesJson.body.features;
 
     const quakesTitleAndDistinctCoordArray = getQuakesTitleAndDistinctCoord(quakeJsonFeatures);
-    const arrayOfTopCloseQuakes = getTopCloseQuakes(quakesTitleAndDistinctCoordArray, UserPoint, topClose);
+    const arrayOfTopCloseQuakes = getTopCloseQuakes(
+      quakesTitleAndDistinctCoordArray,
+      UserPoint,
+      topClose
+    );
 
     printTopNearbyQuakes(arrayOfTopCloseQuakes);
-
-  }
-  catch (err) {
-
+  } catch (err) {
     console.log(err);
-
   }
-
 })();
-
-
-
-
-
-
-
-
-
-
-
-
